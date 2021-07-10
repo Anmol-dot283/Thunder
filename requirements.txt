@@ -25,6 +25,7 @@ colorama==0.4.4
 Command==0.1.0
 covid==2.4.0
 cowpy==1.1.0
+crayons==0.4.0
 cryptography==3.2.1
 cryptocompare==0.7.3
 Cython==0.29.21
