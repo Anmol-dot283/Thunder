@@ -17,13 +17,13 @@ class Var(object):
     API_HASH = os.environ.get("API_HASH", "eb06d4abfb49dc3eeb1aeb98ae0f581e")
     STRING_SESSION = os.environ.get("STRING_SESSION", None)
     DB_URI = os.environ.get("DATABASE_URL", None)
-    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", None)
+    TEMP_DOWNLOAD_DIRECTORY = os.environ.get("TEMP_DOWNLOAD_DIRECTORY", ./userbot/DOWNLOADS/)
     BIO_MSG = os.environ.get("BIO_MSG", None)
     ALIVE_MESSAGE = os.environ.get("ALIVE_MESSAGE", None)
 
     TMP_DOWNLOAD_DIRECTORY = os.environ.get("TMP_DOWNLOAD_DIRECTORY", None)
-    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", None)
-    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", None)
+    CHROME_DRIVER = os.environ.get("CHROME_DRIVER", /usr/bin/chromedriver)
+    GOOGLE_CHROME_BIN = os.environ.get("GOOGLE_CHROME_BIN", /usr/bin/google-chrome)
     LOGGER = True
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
