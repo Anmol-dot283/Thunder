@@ -65,7 +65,7 @@ class Config(object):
     DOWNLOAD_PFP_URL_CLOCK = os.environ.get("DOWNLOAD_PFP_URL_CLOCK", None)
     MAX_FLOOD_IN_P_M_s = os.environ.get("MAX_FLOOD_IN_P_M_s", "3")
     COMBINED_GROUP_ID = int(os.envoiron.get("COMBINED_GROUP_ID", -100))
-    PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", COMBINED_GROUP_ID))
+    PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", f"{COMBINED_GROUP_ID}"))
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     MAX_MESSAGE_SIZE_LIMIT = 4095
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
