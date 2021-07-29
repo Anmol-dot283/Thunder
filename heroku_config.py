@@ -19,9 +19,10 @@ class Var(object):
     HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
     TG_BOT_TOKEN_BF_HER = os.environ.get("TG_BOT_TOKEN_BF_HER", None)
     # Send .get_id in any channel to fill this value.
-    PLUGIN_CHANNEL = int(os.environ.get("PLUGIN_CHANNEL", -100))
-    PRIVATE_GROUP_BOT_API_ID = int(os.environ.get("PRIVATE_GROUP_BOT_API_ID", -100))
-    PM_PERMIT_GROUP_ID = os.environ.get("PM_PERMIT_GROUP_ID", None)
+    COMBINED_GROUP_ID = int(os.envoiron.get("COMBINED_GROUP_ID", -100))
+    PLUGIN_CHANNEL = os.environ.get("PLUGIN_CHANNEL", COMBINED_GROUP_ID)
+    PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", COMBINED_GROUP_ID)
+    PM_PERMIT_GROUP_ID = os.environ.get("PM_PERMIT_GROUP_ID", COMBINED_GROUP_ID)
     TG_BOT_USER_NAME_BF_HER = os.environ.get("TG_BOT_USER_NAME_BF_HER", None)
     NO_SONGS = bool(os.environ.get("NO_SONGS", False))
     DOWNLOAD_PFP_URL_CLOCK = os.environ.get("DOWNLOAD_PFP_URL_CLOCK", None)
@@ -36,7 +37,7 @@ class Var(object):
         t_file = open(TEMP_DOWNLOAD_DIRECTORY + "auth_token.txt", "w")
         t_file.write(AUTH_TOKEN_DATA)
         t_file.close()
-    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", None)
+    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", COMBINED_GROUP_ID)
     if PRIVATE_GROUP_ID is not None:
         try:
             PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
