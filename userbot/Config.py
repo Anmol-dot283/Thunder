@@ -64,7 +64,8 @@ class Var(object):
     NO_SONGS = bool(os.environ.get("NO_SONGS", False))
     DOWNLOAD_PFP_URL_CLOCK = os.environ.get("DOWNLOAD_PFP_URL_CLOCK", None)
     MAX_FLOOD_IN_P_M_s = os.environ.get("MAX_FLOOD_IN_P_M_s", "3")
-    PLUGIN_CHANNEL = os.environ.get("PLUGIN_CHANNEL", COMBINED_GROUP_ID)
+    COMBINED_GROUP_ID = int(os.environ.get("COMBINED_GROUP_ID", -100))
+    PLUGIN_CHANNEL = os.environ.get("PLUGIN_CHANNEL", f"{COMBINED_GROUP_ID}")
     G_DRIVE_CLIENT_ID = os.environ.get("G_DRIVE_CLIENT_ID", None)
     MAX_MESSAGE_SIZE_LIMIT = 4095
     G_DRIVE_CLIENT_SECRET = os.environ.get("G_DRIVE_CLIENT_SECRET", None)
@@ -112,9 +113,8 @@ class Var(object):
     TELEGRAPH_SHORT_NAME = os.environ.get("TELEGRAPH_SHORT_NAME", "Lightning")
     ANTISPAM_FEATURE = os.environ.get("ANTISPAM_FEATURE", "ENABLE")
     ANTI_SPAMINC_TOKEN = os.environ.get("ANTI_SPAMINC_TOKEN", None)
-    COMBINED_GROUP_ID = int(os.envoiron.get("COMBINED_GROUP_ID", -100))
     ASSISTANT_LOG = int(os.environ.get("ASSISTANT_LOG", False))
-    PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID", COMBINED_GROUP_ID)
+    PRIVATE_GROUP_BOT_API_ID = os.environ.get("PRIVATE_GROUP_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
     if PRIVATE_GROUP_BOT_API_ID:
         PRIVATE_GROUP_BOT_API_ID = int(PRIVATE_GROUP_BOT_API_ID)
     AUTH_TOKEN_DATA = os.environ.get("AUTH_TOKEN_DATA", None)
@@ -134,7 +134,7 @@ class Var(object):
     UB_BLACK_LIST_CHAT = set(
         int(x) for x in os.environ.get("UB_BLACK_LIST_CHAT", "").split()
     )
-    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID", COMBINED_GROUP_ID)
+    PRIVATE_GROUP_ID = os.environ.get("PRIVATE_GROUP_ID",  f"{COMBINED_GROUP_ID}")
     if PRIVATE_GROUP_ID is not None:
         try:
             PRIVATE_GROUP_ID = int(PRIVATE_GROUP_ID)
@@ -143,7 +143,7 @@ class Var(object):
                 "Invalid Private Group ID. Make sure your ID is starts with -100 and make sure that it is only numbers."
             )
 
-    PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID", COMBINED_GROUP_ID)
+    PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
     if PM_LOGGR_BOT_API_ID:
         PM_LOGGR_BOT_API_ID = int(PM_LOGGR_BOT_API_ID)
 
@@ -174,7 +174,7 @@ if ENV:
         # Send .get_id in any channel to fill this value. ReQuired for
         # @Manuel15 inspiration to work!
         PRIVATE_CHANNEL_BOT_API_ID = int(
-            os.environ.get("PRIVATE_CHANNEL_BOT_API_ID", COMBINED_GROUP_ID)
+            os.environ.get("PRIVATE_CHANNEL_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
         )
         # This is required for the plugins involving the file system.
         TMP_DOWNLOAD_DIRECTORY = os.environ.get(
@@ -196,7 +196,7 @@ if ENV:
         # Get a Free API Key from OCR.Space
         OCR_SPACE_API_KEY = os.environ.get("OCR_SPACE_API_KEY", None)
         # Send .get_id in any group with all your administration bots (added)
-        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP", COMBINED_GROUP_ID))
+        G_BAN_LOGGER_GROUP = int(os.environ.get("G_BAN_LOGGER_GROUP",  f"{COMBINED_GROUP_ID}"))
         # TG API limit. An album can have atmost 10 media!
         GOOGLE_SEARCH_COUNT_LIMIT = int(os.environ.get("GOOGLE_SEARCH_COUNT_LIMIT", 9))
         TG_GLOBAL_ALBUM_LIMIT = int(os.environ.get("TG_GLOBAL_ALBUM_LIMIT", 9))
@@ -238,7 +238,7 @@ if ENV:
         # set to True if you want to log PMs to your PM_LOGGR_BOT_API_ID
         NC_LOG_P_M_S = bool(os.environ.get("NC_LOG_P_M_S", False))
         # send .get_id in any channel to forward all your NEW PMs to this group
-        PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID", None)
+        PM_LOGGR_BOT_API_ID = os.environ.get("PM_LOGGR_BOT_API_ID",  f"{COMBINED_GROUP_ID}")
         if PM_LOGGR_BOT_API_ID:
             PM_LOGGR_BOT_API_ID = int(PM_LOGGR_BOT_API_ID)
         # For Databases
