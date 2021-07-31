@@ -44,7 +44,7 @@ INT_PLUG = ""
 LOAD_PLUG = {}
 COOL_CMD = {}
 # PaperPlaneExtended Support Vars
-ENV = os.environ.get("ENV", False)
+ENV = os.environ.get("ENV", "Anithing")
 """ PPE initialization. """
 
 
