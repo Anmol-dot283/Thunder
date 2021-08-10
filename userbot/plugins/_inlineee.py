@@ -577,8 +577,7 @@ async def hmm(lightning):
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wtshit"))) 
 async def lmaao(lightning):
      if lightning.query.user_id == bot.uid:
-        result = builder.article(
-            title="Cool",
+        result = lightning.edit(
             text=f"**How If Face Problem \n{LIGHTNINGUSER}** \nChoose Your Problem For Help ",
             buttons=[
                 [custom.Button.inline("Help", data="what?")],
@@ -594,7 +593,7 @@ async def lmaao(lightning):
             ],
         )
      else:
-            fukoff = "You Don't belong to me master's category. So, why should i follow your orders" 
+            fukoff = "You Don't belong to my master's category. So, why should i follow your orders\nHence, Fuck off" 
             await lightning.answer(fukoff, alert=True)
 
 """
