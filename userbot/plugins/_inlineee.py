@@ -233,7 +233,7 @@ async def inline_handler(lightning):
             buttons=buttons,
             link_preview=False,
         )
-        await lightning.answer([result])
+        await lightning.answer([result] if result else None)
     elif lightning.query.user_id == bot.uid and query == "**Cool":
         result = builder.article(
             title="Cool",
@@ -251,7 +251,7 @@ async def inline_handler(lightning):
                 ], 
             ],
         )
-        await lightning.answer([result])
+        await lightning.answer([result] if result else None)
     elif lightning.query.user_id == bot.uid and query.startswith("**Hello Sir"):
         result = builder.photo(
             file=LIGHTNING_BOT_PIC,
