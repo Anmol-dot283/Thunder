@@ -576,15 +576,14 @@ async def hmm(lightning):
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"wtshit"))) 
 async def lmaao(lightning):
-     if lightning.query.user_id == bot.uid:
-        result = lightning.edit(
+    if lightning.query.user_id == bot.uid:
+        await lightning.edit(
             text=f"**How If Face Problem \n{LIGHTNINGUSER}** \nChoose Your Problem For Help ",
             buttons=[
                 [custom.Button.inline("Help", data="what?")],
                 [Button.url("Commands Not Working🥺", "https://t.me/lightning_support_group")],
                 [Button.url("Help Article 🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
-                [
-                    Button.url(
+                [Button.url(
                 
                     "Want To Learn CMDS😅",
                     "https://t.me/lightning_support_group" ,
@@ -592,9 +591,9 @@ async def lmaao(lightning):
                 ], 
             ],
         )
-     else:
-            fukoff = "You Don't belong to my master's category. So, why should i follow your orders\nHence, Fuck off" 
-            await lightning.answer(fukoff, alert=True)
+    else:
+        fukoff = "You Don't belong to my master's category. So, why should i follow your orders\nHence, Fuck off" 
+        await lightning.answer(fukoff, alert=True)
 
 """
 Thanks To Friday Userbot and @Midhun_xD For This idea
