@@ -585,11 +585,11 @@ async def lmaao(lightning):
                 [Button.url("Help Article 🤓", "https://app.gitbook.com/@poxsisofficial/s/help/")],
                 [Button.url(
                 
-                    "Want To Learn CMDS😅",
-                    "https://t.me/lightning_support_group" ,
+                    "Stay ConnectedS😅",
+                    "https://t.me/black_lightning_channel"
                     )
-                ], 
-            ],
+                ] 
+            ]
         )
     else:
         fukoff = "You Don't belong to my master's category. So, why should i follow your orders\nHence, Fuck off" 
