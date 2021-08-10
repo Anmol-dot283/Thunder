@@ -224,7 +224,7 @@ async def inline_handler(lightning):
     builder = lightning.builder
     result = None
     query = lightning.text
-    if lightning.query.user_id == bot.uid and query.startswith("**Black") or query.startswith("Black"):
+    if lightning.query.user_id == bot.uid and query.startswith("**sed") or query.startswith("soosed"):
         rev_text = query[::-1]
         buttons = lightnings_menu_for_help(0, CMD_LIST, "helpme")
         result = builder.article(
