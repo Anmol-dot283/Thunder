@@ -416,23 +416,22 @@ async def lightning_is_better(lightning):
             Button.inline("Venom Alive", data="valive"
             )
             ]
-    ]
+    ])
 
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"bitch")))
 
 async def lightning_is_better(lightning):
-    if lightning.query.user_id == bot.uid:
-    start = datetime.now()
+        start = datetime.now()
 
-    end = datetime.now()
+        end = datetime.now()
 
-    ping = (end - start).microseconds / 1000
-        fck_bit = f"ρσηg\nYup Mast i Am With you\n𝐏𝐢𝐧𝐠 :-{ping}"
-        await lightning.edit(fck_bit, buttons=[Button.inline("Back", data="wtshit")])
-    else 
-    await lightning.get_chat()
-    await lightning.answer(f"I am {LIGHTNINGUSER}'s Assistant not your", alert=True)
+        ping = (end - start).microseconds / 1000
+        if lightning.query.user_id == bot.uid:
+          fck_bit = f"ρσηg\nYup Mast i Am With you\n𝐏𝐢𝐧𝐠 :-{ping}"
+          await lightning.edit(fck_bit, buttons=[Button.inline("Back", data="wtshit")])
+        else: 
+           await lightning.answer(f"I am {LIGHTNINGUSER}'s Assistant not your", alert=True)
     
 
 @tgbot.on(events.callbackquery.CallbackQuery(data=re.compile(b"he_sucks")))
