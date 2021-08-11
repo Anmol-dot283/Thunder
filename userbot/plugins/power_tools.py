@@ -14,10 +14,6 @@ from uniborg.util import lightning_cmd
 
 @borg.on(lightning_cmd(pattern="restart"))
 async def _(event):
-    await event.edit("Restarting [██░] ...")
-    await asyncio.sleep(2)
-    await event.edit("Restarting [███]...")
-    await asyncio.sleep(2)
     await event.edit(
         "Black Lightning restarted successfully. Wait for 2-3 minutes to complete all processes."
     )
@@ -27,7 +23,7 @@ async def _(event):
     quit()
 
 
-@borg.on(lightning_cmd(pattern="shutdown"))
+@borg.on(lightning_cmd(pattern="(shutdown|stop)$"))
 async def _(event):
     if event.fwd_from:
         return
