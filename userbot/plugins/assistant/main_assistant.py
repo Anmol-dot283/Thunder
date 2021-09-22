@@ -39,7 +39,7 @@ async def start(event):
     replied_user = await event.client(GetFullUserRequest(event.sender_id))
     firstname = replied_user.user.first_name
     vent = event.chat_id
-    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\nMy [➤ Master](tg://user?id={bot.uid}) \nYou Can Talk/Contact My Master Using This Bot. \n\nIf You Want Your Own Assistant You Can Deploy From Button Below. \n\nPowered By [вℓα¢к ℓιgнтηιηg](https://t.me/lightning_support_group)"
+    starttext = f"Hello, {firstname} ! Nice To Meet You, Well I Am {bot_id}, An Powerfull Assistant Bot. \n\n [➤ BRYLL](https://telegram.me/bryll_helpdesk_bot) \nYou Can Talk/Contact BRYLL EDUCATION Using This Bot."
     if event.sender_id == bot.uid:
         await tgbot.send_message(
             vent,
@@ -64,9 +64,9 @@ async def start(event):
             message=starttext,
             link_preview=False,
             buttons=[
-                [custom.Button.inline("Deploy your BL ", data="deploy")],
-                [Button.url("Help Me ❓", "https://t.me/lightning_support_group")],
-                [Button.url("Lightning Web💫", "https://lightninguserbot.blogspot.com")],
+                [custom.Button.inline("Deploy your Bot ", data="dep")],
+                [Button.url("Help Me ❓", "https://t.me/brylledu")],
+                [Button.url("Channel", "https://t.me/bryll_education")],
             ],
         )
 
@@ -212,7 +212,7 @@ async def starkisnoob(event):
         add_nibba_in_db(user_id)
         await event.reply("Blacklisted This Dumb Person")
         await tgbot.send_message(
-            user_id, "You Have Been Blacklisted And You Can't Message My Master Now."
+            user_id, "You Have Been Blacklisted And You Can't Message BRYLL EDUCATION Now."
         )
 
 
@@ -231,5 +231,5 @@ async def starkisnoob(event):
         removenibba(user_id)
         await event.reply("DisBlacklisted This Dumb Person")
         await tgbot.send_message(
-            user_id, "Congo! You Have Been Unblacklisted By My Master."
+            user_id, "Congo! You Have Been Unblacklisted By BRYLL EDUCATION."
         )
